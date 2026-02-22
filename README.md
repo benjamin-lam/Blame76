@@ -1,15 +1,27 @@
-# Hi, I'm Benjamin Lam 👋 
-### Software Architect | 25+ Years of Web Experience | Pioneer of VIP3-Coding
+## Hi, ich bin Benjamin Lam 👋  
+### Software-Architekt • 25+ Jahre Web-Erfahrung • Entwickler von VIP3‑Coding
 
-I bridge the gap between the rock-solid reliability of the **LAMP stack** and the fast-paced future of **AI-driven development**. 
-Based in Bremen, Germany 🇩🇪.
+Ich arbeite an der Schnittstelle zwischen **klassischer Web‑Architektur** und **KI‑gestützter Softwareentwicklung**.  
+Aus der LAMP‑Welt kommend, fokussiere ich mich heute darauf, KI‑Coding **verlässlich, reproduzierbar und professionell** zu machen.  
+Bremen, Deutschland 🇩🇪.
 
-## 🧭 My Current Focus: VIP3-Coding
-I’m currently refining **VIP3**, a structured method to turn chaotic "Vibe Coding" into a reproducible, sprint-based workflow for professional software engineering.
+---
 
-- **V**ibe (The Vision)
-- **I**nspired (The Context & Specs)
-- **P**rompt (The Iteration Task)
-- **3**ngineering-Review & Evaluation (The Checkpoint)
+## 🧭 Mein aktueller Schwerpunkt: VIP3‑Coding  
+Ich entwickle **VIP3**, eine strukturierte Methode, die chaotisches „Vibe Coding“ in einen reproduzierbaren, sprint‑basierten Workflow überführt.
 
-> *"Treating natural language prompts like Git commits."*
+**VIP3** gliedert jede Iteration in vier klare Schritte:
+
+- **V — Vibe (Vision)**  
+  Das Ziel der Iteration, ohne Implementation‑Details.
+
+- **I — Inspired (Kontext & Spezifikationen)**  
+  Architektur, Constraints, Domain‑Wissen — die Senior‑Ebene.
+
+- **P — Prompt (Task)**  
+  Die präzise Anweisung an die KI.
+
+- **3 — Engineering‑Review**  
+  Ergebnis prüfen, Checkpoint setzen oder zurückrollen und iterieren.
+
+> *„Behandle Prompts wie Git‑Commits: sauber, isoliert, revertierbar.“*
