@@ -1,0 +1,41 @@
+services:
+  web:
+    image: php:8.3-apache
+    container_name: guestbook_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.4
+    container_name: guestbook_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: gaestebuch_demo
+      MYSQL_USER: app
+      MYSQL_PASSWORD: secret123
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: guestbook_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: rootsecret
+
+volumes:
+  db_data:
