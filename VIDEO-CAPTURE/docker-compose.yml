@@ -1,0 +1,46 @@
+services:
+  web:
+    build: .
+    container_name: gaestebuch_web
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_NAME: gaestebuch_demo
+      DB_USER: app
+      DB_PASS: secret123
+
+  db:
+    image: mysql:8.4
+    container_name: gaestebuch_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: gaestebuch_demo
+      MYSQL_USER: app
+      MYSQL_PASSWORD: secret123
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: gaestebuch_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootsecret
+    ports:
+      - "8081:80"
+
+volumes:
+  db_data:
